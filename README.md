@@ -7,8 +7,12 @@ Start Project!
 
 [API Documentation](http://instructure.github.com/canvas-lms/doc/api/basics.html)
 
+* API Uses Basic HTTP Auth for each request.
+
 ## Next Steps:
 
 * Login Screen Created
-* Need HTTP Requests
+* Add HTTP Request Objects
+* Setup Canvas Production Server
+
 
