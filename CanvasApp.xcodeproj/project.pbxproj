@@ -1,0 +1,298 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCEF801F132F0E4800D3DA2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF801E132F0E4800D3DA2E /* UIKit.framework */; };
+		FCEF8021132F0E4800D3DA2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8020132F0E4800D3DA2E /* Foundation.framework */; };
+		FCEF8023132F0E4800D3DA2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8022132F0E4800D3DA2E /* CoreGraphics.framework */; };
+		FCEF8029132F0E4800D3DA2E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCEF8027132F0E4800D3DA2E /* InfoPlist.strings */; };
+		FCEF802C132F0E4800D3DA2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF802B132F0E4800D3DA2E /* main.m */; };
+		FCEF802F132F0E4800D3DA2E /* CanvasAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF802E132F0E4800D3DA2E /* CanvasAppAppDelegate.m */; };
+		FCEF8032132F0E4800D3DA2E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF8030132F0E4800D3DA2E /* MainWindow.xib */; };
+		FCEF8035132F0E4800D3DA2E /* CanvasAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */; };
+		FCEF8038132F0E4800D3DA2E /* CanvasAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */; };
+		FCEF805E132F163500D3DA2E /* CTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF805C132F163500D3DA2E /* CTLoginViewController.m */; };
+		FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */; };
+		FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8060132F188000D3DA2E /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FCEF801A132F0E4800D3DA2E /* CanvasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanvasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCEF801E132F0E4800D3DA2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FCEF8020132F0E4800D3DA2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FCEF8022132F0E4800D3DA2E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FCEF8026132F0E4800D3DA2E /* CanvasApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CanvasApp-Info.plist"; sourceTree = "<group>"; };
+		FCEF8028132F0E4800D3DA2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FCEF802A132F0E4800D3DA2E /* CanvasApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CanvasApp-Prefix.pch"; sourceTree = "<group>"; };
+		FCEF802B132F0E4800D3DA2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FCEF802D132F0E4800D3DA2E /* CanvasAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasAppAppDelegate.h; sourceTree = "<group>"; };
+		FCEF802E132F0E4800D3DA2E /* CanvasAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasAppAppDelegate.m; sourceTree = "<group>"; };
+		FCEF8031132F0E4800D3DA2E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasAppViewController.h; sourceTree = "<group>"; };
+		FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasAppViewController.m; sourceTree = "<group>"; };
+		FCEF8037132F0E4800D3DA2E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CanvasAppViewController.xib; sourceTree = "<group>"; };
+		FCEF805B132F163500D3DA2E /* CTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLoginViewController.h; sourceTree = "<group>"; };
+		FCEF805C132F163500D3DA2E /* CTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLoginViewController.m; sourceTree = "<group>"; };
+		FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTLoginViewController.xib; sourceTree = "<group>"; };
+		FCEF8060132F188000D3DA2E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCEF8017132F0E4800D3DA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */,
+				FCEF801F132F0E4800D3DA2E /* UIKit.framework in Frameworks */,
+				FCEF8021132F0E4800D3DA2E /* Foundation.framework in Frameworks */,
+				FCEF8023132F0E4800D3DA2E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCEF800F132F0E4800D3DA2E = {
+			isa = PBXGroup;
+			children = (
+				FCEF8024132F0E4800D3DA2E /* CanvasApp */,
+				FCEF801D132F0E4800D3DA2E /* Frameworks */,
+				FCEF801B132F0E4800D3DA2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCEF801B132F0E4800D3DA2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCEF801A132F0E4800D3DA2E /* CanvasApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCEF801D132F0E4800D3DA2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCEF8060132F188000D3DA2E /* QuartzCore.framework */,
+				FCEF801E132F0E4800D3DA2E /* UIKit.framework */,
+				FCEF8020132F0E4800D3DA2E /* Foundation.framework */,
+				FCEF8022132F0E4800D3DA2E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCEF8024132F0E4800D3DA2E /* CanvasApp */ = {
+			isa = PBXGroup;
+			children = (
+				FCEF805B132F163500D3DA2E /* CTLoginViewController.h */,
+				FCEF805C132F163500D3DA2E /* CTLoginViewController.m */,
+				FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */,
+				FCEF802D132F0E4800D3DA2E /* CanvasAppAppDelegate.h */,
+				FCEF802E132F0E4800D3DA2E /* CanvasAppAppDelegate.m */,
+				FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */,
+				FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */,
+				FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */,
+				FCEF8030132F0E4800D3DA2E /* MainWindow.xib */,
+				FCEF8025132F0E4800D3DA2E /* Supporting Files */,
+			);
+			path = CanvasApp;
+			sourceTree = "<group>";
+		};
+		FCEF8025132F0E4800D3DA2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCEF8026132F0E4800D3DA2E /* CanvasApp-Info.plist */,
+				FCEF8027132F0E4800D3DA2E /* InfoPlist.strings */,
+				FCEF802A132F0E4800D3DA2E /* CanvasApp-Prefix.pch */,
+				FCEF802B132F0E4800D3DA2E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCEF8019132F0E4800D3DA2E /* CanvasApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCEF803B132F0E4800D3DA2E /* Build configuration list for PBXNativeTarget "CanvasApp" */;
+			buildPhases = (
+				FCEF8016132F0E4800D3DA2E /* Sources */,
+				FCEF8017132F0E4800D3DA2E /* Frameworks */,
+				FCEF8018132F0E4800D3DA2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CanvasApp;
+			productName = CanvasApp;
+			productReference = FCEF801A132F0E4800D3DA2E /* CanvasApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCEF8011132F0E4800D3DA2E /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = FCEF8014132F0E4800D3DA2E /* Build configuration list for PBXProject "CanvasApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FCEF800F132F0E4800D3DA2E;
+			productRefGroup = FCEF801B132F0E4800D3DA2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCEF8019132F0E4800D3DA2E /* CanvasApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCEF8018132F0E4800D3DA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEF8029132F0E4800D3DA2E /* InfoPlist.strings in Resources */,
+				FCEF8032132F0E4800D3DA2E /* MainWindow.xib in Resources */,
+				FCEF8038132F0E4800D3DA2E /* CanvasAppViewController.xib in Resources */,
+				FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCEF8016132F0E4800D3DA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEF802C132F0E4800D3DA2E /* main.m in Sources */,
+				FCEF802F132F0E4800D3DA2E /* CanvasAppAppDelegate.m in Sources */,
+				FCEF8035132F0E4800D3DA2E /* CanvasAppViewController.m in Sources */,
+				FCEF805E132F163500D3DA2E /* CTLoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FCEF8027132F0E4800D3DA2E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCEF8028132F0E4800D3DA2E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FCEF8030132F0E4800D3DA2E /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCEF8031132F0E4800D3DA2E /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCEF8037132F0E4800D3DA2E /* en */,
+			);
+			name = CanvasAppViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCEF8039132F0E4800D3DA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FCEF803A132F0E4800D3DA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		FCEF803C132F0E4800D3DA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CanvasApp/CanvasApp-Prefix.pch";
+				INFOPLIST_FILE = "CanvasApp/CanvasApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FCEF803D132F0E4800D3DA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CanvasApp/CanvasApp-Prefix.pch";
+				INFOPLIST_FILE = "CanvasApp/CanvasApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCEF8014132F0E4800D3DA2E /* Build configuration list for PBXProject "CanvasApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCEF8039132F0E4800D3DA2E /* Debug */,
+				FCEF803A132F0E4800D3DA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCEF803B132F0E4800D3DA2E /* Build configuration list for PBXNativeTarget "CanvasApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCEF803C132F0E4800D3DA2E /* Debug */,
+				FCEF803D132F0E4800D3DA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCEF8011132F0E4800D3DA2E /* Project object */;
+}
