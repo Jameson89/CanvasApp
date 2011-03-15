@@ -16,6 +16,9 @@
 		FCEF8032132F0E4800D3DA2E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF8030132F0E4800D3DA2E /* MainWindow.xib */; };
 		FCEF8035132F0E4800D3DA2E /* CanvasAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */; };
 		FCEF8038132F0E4800D3DA2E /* CanvasAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */; };
+		FCEF805E132F163500D3DA2E /* CTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF805C132F163500D3DA2E /* CTLoginViewController.m */; };
+		FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */; };
+		FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8060132F188000D3DA2E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,10 @@
 		FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasAppViewController.h; sourceTree = "<group>"; };
 		FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasAppViewController.m; sourceTree = "<group>"; };
 		FCEF8037132F0E4800D3DA2E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CanvasAppViewController.xib; sourceTree = "<group>"; };
+		FCEF805B132F163500D3DA2E /* CTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLoginViewController.h; sourceTree = "<group>"; };
+		FCEF805C132F163500D3DA2E /* CTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLoginViewController.m; sourceTree = "<group>"; };
+		FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTLoginViewController.xib; sourceTree = "<group>"; };
+		FCEF8060132F188000D3DA2E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */,
 				FCEF801F132F0E4800D3DA2E /* UIKit.framework in Frameworks */,
 				FCEF8021132F0E4800D3DA2E /* Foundation.framework in Frameworks */,
 				FCEF8023132F0E4800D3DA2E /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +77,7 @@
 		FCEF801D132F0E4800D3DA2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCEF8060132F188000D3DA2E /* QuartzCore.framework */,
 				FCEF801E132F0E4800D3DA2E /* UIKit.framework */,
 				FCEF8020132F0E4800D3DA2E /* Foundation.framework */,
 				FCEF8022132F0E4800D3DA2E /* CoreGraphics.framework */,
@@ -79,12 +88,15 @@
 		FCEF8024132F0E4800D3DA2E /* CanvasApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCEF805B132F163500D3DA2E /* CTLoginViewController.h */,
+				FCEF805C132F163500D3DA2E /* CTLoginViewController.m */,
+				FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */,
 				FCEF802D132F0E4800D3DA2E /* CanvasAppAppDelegate.h */,
 				FCEF802E132F0E4800D3DA2E /* CanvasAppAppDelegate.m */,
-				FCEF8030132F0E4800D3DA2E /* MainWindow.xib */,
 				FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */,
 				FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */,
 				FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */,
+				FCEF8030132F0E4800D3DA2E /* MainWindow.xib */,
 				FCEF8025132F0E4800D3DA2E /* Supporting Files */,
 			);
 			path = CanvasApp;
@@ -151,6 +163,7 @@
 				FCEF8029132F0E4800D3DA2E /* InfoPlist.strings in Resources */,
 				FCEF8032132F0E4800D3DA2E /* MainWindow.xib in Resources */,
 				FCEF8038132F0E4800D3DA2E /* CanvasAppViewController.xib in Resources */,
+				FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +177,7 @@
 				FCEF802C132F0E4800D3DA2E /* main.m in Sources */,
 				FCEF802F132F0E4800D3DA2E /* CanvasAppAppDelegate.m in Sources */,
 				FCEF8035132F0E4800D3DA2E /* CanvasAppViewController.m in Sources */,
+				FCEF805E132F163500D3DA2E /* CTLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +290,7 @@
 				FCEF803D132F0E4800D3DA2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,7 +6,9 @@
 //  Copyright 2011 Klint Holmes. All rights reserved.
 //
 
+#import "CTLoginViewController.h"
 #import "CanvasAppViewController.h"
+
 
 @implementation CanvasAppViewController
 
@@ -25,13 +27,19 @@
 
 #pragma mark - View lifecycle
 
-/*
+//*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+
 }
-*/
+//*/
+
+- (IBAction)present:(id)sender {
+    CTLoginViewController *loginView = [[CTLoginViewController alloc] initWithNibName:@"CTLoginViewController" bundle:nil];
+    [self presentModalViewController:loginView animated:YES];
+    [loginView release];
+}
 
 - (void)viewDidUnload
 {

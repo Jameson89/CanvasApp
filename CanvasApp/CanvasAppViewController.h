@@ -12,4 +12,6 @@
     
 }
 
+- (IBAction)present:(id)sender;
+
 @end
