@@ -26,3 +26,18 @@
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# XCode file #
+##############
+build
+*xcodeproj/*mode*
+*xcodeproj/*pbxuser
+*xcodeproj/*per*
+*xcodeproj/project.xcworkspace
+*xcodeproj/xcuserdata
+*tmproj
+.DS_Store
+profile
+*.pbxuser
+*.mode1v3
+External/GHUnit/*
