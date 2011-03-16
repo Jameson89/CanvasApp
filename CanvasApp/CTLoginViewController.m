@@ -108,6 +108,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                        delegate:self 
                                               cancelButtonTitle:@"OK" 
                                               otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
     }
 	return YES; 
 }
