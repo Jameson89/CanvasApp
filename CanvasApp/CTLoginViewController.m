@@ -93,18 +93,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField { 
 	
-	//NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	//[defaults setObject:username.text forKey:kUsername];
-	//[defaults setObject:password.text forKey:kPassword];
+
 	
 	//[NSThread detachNewThreadSelector:@selector(showLoading) toTarget:self withObject:nil];
 	
-	//if (![appDelegate getAuthentication]) {
-	//	[[NSNotificationCenter defaultCenter] postNotificationName:@"loginWillDismiss" object:nil];
+	if (username.text && password.text && ![username.text isEqualToString:@""]  && ![password.text isEqualToString:@""]) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:username.text forKey:kUsername];
+        [defaults setObject:password.text forKey:kPassword];
 		[self dismissModalViewControllerAnimated:YES];
-	//} else {
-	//	loadingView.hidden = YES;
-	//}
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error:" 
+                                                        message:@"Username / Password required." 
+                                                       delegate:self 
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil, nil];
+    }
 	return YES; 
 }
 

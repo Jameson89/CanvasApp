@@ -26,8 +26,11 @@
 }
 
 - (void)startRequest:(NSURL *)url {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *username = [defaults objectForKey:@"username"];
+	NSString *password = [defaults objectForKey:@"password"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    NSString *authString = [self Base64Encode:[[NSString stringWithFormat:@"%@:%@", @"username", @"password"] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *authString = [self Base64Encode:[[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding]];
     
     authString = [NSString stringWithFormat: @"Basic %@", authString];
     [request setValue:authString forHTTPHeaderField:@"Authorization"];

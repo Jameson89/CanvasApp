@@ -36,14 +36,23 @@
 
 }
 //*/
+- (void)viewDidAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"username"] && ![defaults objectForKey:@"password"]) {
+        CTLoginViewController *login = [[CTLoginViewController alloc] initWithNibName:@"CTLoginViewController" bundle:nil];
+        [self presentModalViewController:login animated:YES];
+        [login release];
+    } else {
+        data = [[NSMutableData alloc] init];
+        MyRequest *request = [[MyRequest alloc] initWithBuffer:data];
+        [request setDelegate:self];
+        [request startRequest:[NSURL URLWithString:@"https://canvas.instructure.com/api/v1/courses.json"]];
+        [request release];
+    }
+}
 
 - (void)viewDidLoad {
-	data = [[NSMutableData alloc] init];
-	MyRequest *request = [[MyRequest alloc] initWithBuffer:data];
-	[request setDelegate:self];
-    //will use https
-	[request startRequest:[NSURL URLWithString:@"https://canvas.instructure.com/api/v1/courses/31078/assignments.json"]];
-	[request release];
+
 }
 
 // HTTPRequest Delegate
@@ -51,7 +60,23 @@
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	[data release];
 	NSDictionary *results = [jsonString JSONValue];
-	NSLog(@"%@", results);
+    if ([results isKindOfClass:[NSDictionary class]]) {
+        if ([results objectForKey:@"errors"]) {
+            CTLoginViewController *login = [[CTLoginViewController alloc] initWithNibName:@"CTLoginViewController" bundle:nil];
+            [self presentModalViewController:login animated:YES];
+            [login release];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error:" 
+                                                            message:@"User authorization required." 
+                                                           delegate:self 
+                                                  cancelButtonTitle:@"OK" 
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
+    }
+    
+    NSLog(@"%@", results);
 }
 
 - (IBAction)present:(id)sender {
