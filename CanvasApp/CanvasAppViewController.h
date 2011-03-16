@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CanvasAppViewController : UIViewController {
-    
+    NSMutableData *data;
 }
 
 - (IBAction)present:(id)sender;
