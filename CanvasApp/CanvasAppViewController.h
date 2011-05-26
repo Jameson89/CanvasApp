@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface CanvasAppViewController : UIViewController {
+    IBOutlet UITableView *courseList;
+    
     NSMutableData *data;
+    NSMutableArray *courses;
 }
+
+@property (nonatomic, retain) UITableView *courseList;
 
 - (IBAction)present:(id)sender;
 

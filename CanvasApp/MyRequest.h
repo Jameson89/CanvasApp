@@ -10,7 +10,7 @@
 
 @protocol HTTPConnectionDelegate <NSObject>
 @optional
-- (void)connectionSuccessful:(BOOL)success;
+- (void)connectionSuccessful:(BOOL)success request:(id)request;
 @end
 
 
@@ -20,8 +20,8 @@
 }
 
 @property (retain) id delegate;
+@property (nonatomic, retain) NSMutableData *buffer;
 
-- (id)initWithBuffer:(NSMutableData *)data;
 - (void)startRequest:(NSURL *)url;
 - (void)connectionSuccessful:(BOOL)success;
 - (NSString *)Base64Encode:(NSData *)data;

@@ -9,18 +9,11 @@
 #import "MyRequest.h"
 
 @implementation MyRequest
-@synthesize delegate;
+@synthesize delegate, buffer;
 
 - (id)init {
 	if (self == [super init]) {
 		buffer = [[NSMutableData alloc] init];
-	}
-	return self;
-}
-
-- (id)initWithBuffer:(NSMutableData *)data {
-	if (self == [super init]) {
-		buffer = data;//[data retain];
 	}
 	return self;
 }
@@ -64,10 +57,11 @@
 }
 
 - (void)connectionSuccessful:(BOOL)success {
-	if([[self delegate] respondsToSelector:@selector(connectionSuccessful:)]) {
-		[[self delegate] connectionSuccessful:success];
+	if([[self delegate] respondsToSelector:@selector(connectionSuccessful:request:)]) {
+		[[self delegate] connectionSuccessful:success request:self];
 	}
 }
+
 
 -(NSString *)Base64Encode:(NSData *)data {
     //Point to start of the data and set buffer sizes
@@ -89,18 +83,7 @@
     //Pad the last to bytes, the outbuffer must always be a multiple of 4
     outputBuffer[outLength-1] = '=';
     outputBuffer[outLength-2] = '=';
-    
-    /* http://en.wikipedia.org/wiki/Base64
-     Text content   M           a           n
-     ASCII          77          97          110
-     8 Bit pattern  01001101    01100001    01101110
-     
-     6 Bit pattern  010011  010110  000101  101110
-     Index          19      22      5       46
-     Base64-encoded T       W       F       u
-     */
-    
-    
+        
     while (inpos < inLength){
         switch (cycle) {
             case 0:

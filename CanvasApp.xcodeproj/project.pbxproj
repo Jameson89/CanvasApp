@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0285E2138319EF0074189C /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0285E1138319EF0074189C /* CustomCellBackground.m */; };
 		FC9D4A0D13307EDA00B29EB3 /* MyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */; };
 		FC9D4A1E13307F9300B29EB3 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A1313307F9300B29EB3 /* NSObject+SBJSON.m */; };
 		FC9D4A1F13307F9300B29EB3 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A1513307F9300B29EB3 /* NSString+SBJSON.m */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC0285E0138319EF0074189C /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
+		FC0285E1138319EF0074189C /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
 		FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRequest.m; sourceTree = "<group>"; };
 		FC9D4A0F13307EE300B29EB3 /* MyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRequest.h; sourceTree = "<group>"; };
 		FC9D4A1113307F9300B29EB3 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		FCEF8024132F0E4800D3DA2E /* CanvasApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC0285E0138319EF0074189C /* CustomCellBackground.h */,
+				FC0285E1138319EF0074189C /* CustomCellBackground.m */,
 				FC9D4A1013307F9300B29EB3 /* JSON */,
 				FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */,
 				FC9D4A0F13307EE300B29EB3 /* MyRequest.h */,
@@ -230,6 +235,7 @@
 				FC9D4A2113307F9300B29EB3 /* SBJsonBase.m in Sources */,
 				FC9D4A2213307F9300B29EB3 /* SBJsonParser.m in Sources */,
 				FC9D4A2313307F9300B29EB3 /* SBJsonWriter.m in Sources */,
+				FC0285E2138319EF0074189C /* CustomCellBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

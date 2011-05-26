@@ -16,4 +16,6 @@
 
 @property (nonatomic, retain) UIView *loadingView;
 
+-(void)showLoading;
+
 @end

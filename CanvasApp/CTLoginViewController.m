@@ -11,6 +11,9 @@
 
 #import "CTLoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CustomCellBackground.h"
+#import "MyRequest.h"
+#import "JSON.h"
 
 @implementation CTLoginViewController
 @synthesize loadingView;
@@ -45,11 +48,13 @@ numberOfRowsInSection:(NSInteger)section {
 		}
 
 	}
-
+    cell.backgroundView = [[[CustomCellBackground alloc] init] autorelease];
+    ((CustomCellBackground *)cell.backgroundView).firstCell = indexPath.row == 0;
+    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 1;
 	if (row == 0) {
 		
 		username.backgroundColor = [UIColor clearColor];
-		username.placeholder = @"Email";
+		username.placeholder = @"Username";
 		username.returnKeyType = UIReturnKeyGo;
 		username.delegate = self;
 		username.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -93,15 +98,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField { 
 	
-
-	
-	//[NSThread detachNewThreadSelector:@selector(showLoading) toTarget:self withObject:nil];
-	
 	if (username.text && password.text && ![username.text isEqualToString:@""]  && ![password.text isEqualToString:@""]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:username.text forKey:kUsername];
         [defaults setObject:password.text forKey:kPassword];
-		[self dismissModalViewControllerAnimated:YES];
+        [self showLoading];
+		MyRequest *request = [[MyRequest alloc] init];
+        [request setDelegate:self];
+        //[request startRequest:[NSURL URLWithString:@"https://learn-wsu.uen.org/api/v1/courses.json"]];
+        [request startRequest:[NSURL URLWithString:@"https://canvas.instructure.com/api/v1/courses.json"]];
+        [request release];
+        
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error:" 
                                                         message:@"Username / Password required." 
@@ -113,6 +120,31 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 	return YES; 
 }
+
+- (void)connectionSuccessful:(BOOL)success request:(id)request {
+    MyRequest *response = (MyRequest *)request;
+	NSString *jsonString = [[NSString alloc] initWithData:response.buffer encoding:NSUTF8StringEncoding];
+	//[data release];
+	NSDictionary *results = [jsonString JSONValue];
+    if ([results isKindOfClass:[NSDictionary class]]) {
+        if ([results objectForKey:@"errors"]) {
+            loadingView.hidden = YES;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error:" 
+                                                            message:@"User authorization required." 
+                                                           delegate:self 
+                                                  cancelButtonTitle:@"OK" 
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
+    } else {
+        loadingView.hidden = YES;
+        [self dismissModalViewControllerAnimated:YES];
+        NSArray *array = [jsonString JSONValue];
+        NSLog(@"%@", [[array objectAtIndex:0] objectForKey:@"name"]);
+    }
+}
+
 
 #pragma mark -
 - (void)showLoading {
