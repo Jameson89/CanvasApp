@@ -12,3 +12,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define canvas_host @"https://learn-wsu.uen.org"
+//#define canvas_host @"https://canvas.instructure.com"

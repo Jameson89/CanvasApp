@@ -105,8 +105,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [self showLoading];
 		MyRequest *request = [[MyRequest alloc] init];
         [request setDelegate:self];
-        //[request startRequest:[NSURL URLWithString:@"https://learn-wsu.uen.org/api/v1/courses.json"]];
-        [request startRequest:[NSURL URLWithString:@"https://canvas.instructure.com/api/v1/courses.json"]];
+        [request startRequest:[NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/courses.json", canvas_host]]]; 
         [request release];
         
     } else {
