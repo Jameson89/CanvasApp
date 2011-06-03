@@ -29,6 +29,11 @@
 		FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8060132F188000D3DA2E /* QuartzCore.framework */; };
 		FCFE1DD413995B1700D28E39 /* CanvasCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */; };
 		FCFE1DD513995B1700D28E39 /* CanvasCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */; };
+		FCFE1DFE1399640300D28E39 /* LPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFE1DF81399640300D28E39 /* LPViewController.m */; };
+		FCFE1DFF1399640300D28E39 /* LPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFE1DF91399640300D28E39 /* LPViewController.xib */; };
+		FCFE1E001399640300D28E39 /* KHBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFE1DFB1399640300D28E39 /* KHBadge.m */; };
+		FCFE1E011399640300D28E39 /* LPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFE1DFD1399640300D28E39 /* LPButton.m */; };
+		FCFE1E041399660800D28E39 /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = FCFE1E031399660800D28E39 /* view.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +75,14 @@
 		FCFE1DD113995B1700D28E39 /* CanvasCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCourseViewController.h; sourceTree = "<group>"; };
 		FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasCourseViewController.m; sourceTree = "<group>"; };
 		FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasCourseViewController.xib; sourceTree = "<group>"; };
+		FCFE1DF71399640300D28E39 /* LPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPViewController.h; sourceTree = "<group>"; };
+		FCFE1DF81399640300D28E39 /* LPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPViewController.m; sourceTree = "<group>"; };
+		FCFE1DF91399640300D28E39 /* LPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPViewController.xib; sourceTree = "<group>"; };
+		FCFE1DFA1399640300D28E39 /* KHBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBadge.h; sourceTree = "<group>"; };
+		FCFE1DFB1399640300D28E39 /* KHBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBadge.m; sourceTree = "<group>"; };
+		FCFE1DFC1399640300D28E39 /* LPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPButton.h; sourceTree = "<group>"; };
+		FCFE1DFD1399640300D28E39 /* LPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPButton.m; sourceTree = "<group>"; };
+		FCFE1E031399660800D28E39 /* view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +154,7 @@
 				FC0285E0138319EF0074189C /* CustomCellBackground.h */,
 				FC0285E1138319EF0074189C /* CustomCellBackground.m */,
 				FC9D4A1013307F9300B29EB3 /* JSON */,
+				FCFE1E021399640B00D28E39 /* Launch Pad */,
 				FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */,
 				FC9D4A0F13307EE300B29EB3 /* MyRequest.h */,
 				FCEF805B132F163500D3DA2E /* CTLoginViewController.h */,
@@ -169,6 +183,21 @@
 				FCEF802B132F0E4800D3DA2E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCFE1E021399640B00D28E39 /* Launch Pad */ = {
+			isa = PBXGroup;
+			children = (
+				FCFE1E031399660800D28E39 /* view.png */,
+				FCFE1DF71399640300D28E39 /* LPViewController.h */,
+				FCFE1DF81399640300D28E39 /* LPViewController.m */,
+				FCFE1DF91399640300D28E39 /* LPViewController.xib */,
+				FCFE1DFA1399640300D28E39 /* KHBadge.h */,
+				FCFE1DFB1399640300D28E39 /* KHBadge.m */,
+				FCFE1DFC1399640300D28E39 /* LPButton.h */,
+				FCFE1DFD1399640300D28E39 /* LPButton.m */,
+			);
+			name = "Launch Pad";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +252,8 @@
 				FCEF8038132F0E4800D3DA2E /* CanvasAppViewController.xib in Resources */,
 				FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */,
 				FCFE1DD513995B1700D28E39 /* CanvasCourseViewController.xib in Resources */,
+				FCFE1DFF1399640300D28E39 /* LPViewController.xib in Resources */,
+				FCFE1E041399660800D28E39 /* view.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +277,9 @@
 				FC9D4A2313307F9300B29EB3 /* SBJsonWriter.m in Sources */,
 				FC0285E2138319EF0074189C /* CustomCellBackground.m in Sources */,
 				FCFE1DD413995B1700D28E39 /* CanvasCourseViewController.m in Sources */,
+				FCFE1DFE1399640300D28E39 /* LPViewController.m in Sources */,
+				FCFE1E001399640300D28E39 /* KHBadge.m in Sources */,
+				FCFE1E011399640300D28E39 /* LPButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

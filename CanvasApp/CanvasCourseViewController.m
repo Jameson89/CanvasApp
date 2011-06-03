@@ -7,15 +7,19 @@
 //
 
 #import "CanvasCourseViewController.h"
+#import "CustomCellBackground.h"
+#import "MyRequest.h"
+#import "JSON.h"
 
 
 @implementation CanvasCourseViewController
+@synthesize courseList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"Assignments";
     }
     return self;
 }
@@ -37,6 +41,7 @@
 
 - (void)viewDidLoad
 {
+    assignments = [[NSMutableArray alloc] init];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -53,5 +58,103 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark -
+#pragma mark UITableView DataSource
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [assignments count];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section {
+	return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView
+		cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	//NSInteger row = [indexPath row];
+	NSInteger section = [indexPath section];
+	static NSString *TableID = @"MyCell";
+	
+    // Will make custom table view cell for this item
+	// *cell = ( *)[tableView dequeueReusableCellWithIdentifier:TableID];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableID];
+	if (cell == nil) {
+		//NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"" owner:self options:nil];
+		//cell = [nib objectAtIndex:0];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:TableID];
+	}
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView = [[[CustomCellBackground alloc] init] autorelease];
+    ((CustomCellBackground *)cell.backgroundView).firstCell = indexPath.row == 0;
+    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 0;
+	
+	cell.textLabel.text = [[assignments objectAtIndex:section] objectForKey:@"name"];
+    /*
+    NSString *enrollment = [[NSString alloc] init];
+    for (int i = 0; i < [[[courses objectAtIndex:section] objectForKey:@"enrollments"] count]; i++) {
+        if (i == 0) {
+            enrollment = [NSString stringWithFormat:@"%@", [[[[courses objectAtIndex:section] objectForKey:@"enrollments"] objectAtIndex:i] objectForKey:@"type"]]; 
+        } else {
+            enrollment = [NSString stringWithFormat:@"%@, %@", enrollment, [[[[courses objectAtIndex:section] objectForKey:@"enrollments"] objectAtIndex:i] objectForKey:@"type"]]; 
+        }
+    }*/
+    //cell.detailTextLabel.text = enrollment;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+	return cell;
+}
+
+-(void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //NSInteger courseId = [[[courses objectAtIndex:[indexPath section]] objectForKey:@"id"] integerValue];
+    // Will be used to make request for assignments page
+    //NSLog(@"%@/api/v1/courses/%d/assignments.json", canvas_host, courseId);
+    //CanvasCourseViewController *cc = [[CanvasCourseViewController alloc] initWithNibName:@"CanvasCourseViewController" bundle:nil];
+    //[self.navigationController pushViewController:cc animated:YES];
+}
+
+/*
+ -(NSString *)tableView:(UITableView *)tableView
+ titleForHeaderInSection:(NSInteger)section {
+ return @"";	
+ }*/
+
+
+-(CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;//88;
+}
+
+- (void)connectionSuccessful:(BOOL)success request:(id)request{
+    MyRequest *responce = (MyRequest *)request;
+	NSString *jsonString = [[NSString alloc] initWithData:responce.buffer encoding:NSUTF8StringEncoding];
+	NSDictionary *results = [jsonString JSONValue];
+    if ([results isKindOfClass:[NSDictionary class]]) {
+        if ([results objectForKey:@"errors"]) {
+            NSLog(@"error");
+           /* CTLoginViewController *login = [[CTLoginViewController alloc] initWithNibName:@"CTLoginViewController" bundle:nil];
+            [self presentModalViewController:login animated:YES];
+            [login release];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error:" 
+                                                            message:@"User authorization required." 
+                                                           delegate:self 
+                                                  cancelButtonTitle:@"OK" 
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];*/
+        }
+    } else {
+        assignments = [[jsonString JSONValue] copy];
+        NSLog(@"%@", assignments);
+        [courseList reloadData];
+    }
+}
+
+
 
 @end
