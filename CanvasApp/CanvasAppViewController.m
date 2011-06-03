@@ -2,7 +2,7 @@
 //  CanvasAppViewController.m
 //  CanvasApp
 //
-//  Created by Klint Holmes on 3/14/11.
+//  Created by Klint Holmes on 5/14/11.
 //  Copyright 2011 Klint Holmes. All rights reserved.
 //
 
@@ -16,17 +16,12 @@
 @implementation CanvasAppViewController
 @synthesize courseList;
 
-- (void)dealloc
-{
+- (void)dealloc {
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -44,11 +39,9 @@
         [self presentModalViewController:login animated:YES];
         [login release];
     } else {
-        data = [[NSMutableData alloc] init];
         MyRequest *request = [[MyRequest alloc] init];
         [request setDelegate:self];
         [request startRequest:[NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/courses.json", canvas_host]]]; 
-
         [request release];
     }
 }
@@ -58,7 +51,6 @@
 - (void)connectionSuccessful:(BOOL)success request:(id)request{
     MyRequest *responce = (MyRequest *)request;
 	NSString *jsonString = [[NSString alloc] initWithData:responce.buffer encoding:NSUTF8StringEncoding];
-	//[data release];
 	NSDictionary *results = [jsonString JSONValue];
     if ([results isKindOfClass:[NSDictionary class]]) {
         if ([results objectForKey:@"errors"]) {
@@ -76,7 +68,7 @@
         }
     } else {
         courses = [[jsonString JSONValue] copy];
-        NSLog(@"%@", courses);
+       // NSLog(@"%@", courses);
         [courseList reloadData];
     }
 }
@@ -87,7 +79,6 @@
 #pragma mark UITableView DataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"%d", [courses count]);
     return [courses count];
  }
 
@@ -103,14 +94,13 @@ numberOfRowsInSection:(NSInteger)section {
 	NSInteger section = [indexPath section];
 	static NSString *TableID = @"MyCell";
 	
+    // Will make custom table view cell for this item
 	// *cell = ( *)[tableView dequeueReusableCellWithIdentifier:TableID];
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableID];
 	if (cell == nil) {
 		//NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"" owner:self options:nil];
 		//cell = [nib objectAtIndex:0];
-		
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:TableID];
-		//cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:TableID] autorelease];
 	}
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[[CustomCellBackground alloc] init] autorelease];
@@ -138,7 +128,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger courseId = [[[courses objectAtIndex:[indexPath section]] objectForKey:@"id"] integerValue];
     // Will be used to make request for assignments page
-    NSLog(@"https://canvas.instructure.com/api/v1/courses/%d/assignments.json", courseId);
+    NSLog(@"%@/api/v1/courses/%d/assignments.json", canvas_host, courseId);
 }
 
 /*
@@ -160,15 +150,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [loginView release];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
