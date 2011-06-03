@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class CanvasAppViewController;
+//@class CanvasAppViewController;
 
 @interface CanvasAppAppDelegate : NSObject <UIApplicationDelegate> {
 
@@ -16,6 +16,6 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet CanvasAppViewController *viewController;
+@property (nonatomic, retain) IBOutlet UINavigationController *navController;//CanvasAppViewController *viewController;
 
 @end

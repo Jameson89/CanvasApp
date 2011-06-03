@@ -93,7 +93,6 @@
 								<string key="NSFrame">{{111, 35}, {103, 21}}</string>
 								<reference key="NSSuperview" ref="115028250"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<reference key="IBUIBackgroundColor" ref="342487857"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -136,7 +135,7 @@
 						<int key="IBUIBarStyle">1</int>
 						<object class="NSColor" key="IBUITintColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjM4MzIxMTY3ODgAA</bytes>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjM4NDMxMzcyNTUAA</bytes>
 						</object>
 						<object class="NSArray" key="IBUIItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>

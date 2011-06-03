@@ -15,13 +15,13 @@
 
 @synthesize window=_window;
 
-@synthesize viewController=_viewController;
+@synthesize navController=_viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
      
-    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     return YES;
 }

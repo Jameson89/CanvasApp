@@ -8,6 +8,7 @@
 
 #import "CTLoginViewController.h"
 #import "CanvasAppViewController.h"
+#import "CanvasCourseViewController.h"
 #import "CustomCellBackground.h"
 #import "MyRequest.h"
 #import "JSON.h"
@@ -27,6 +28,9 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
+    self.title = @"Canvas";
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:.251 green:.384 blue:.455 alpha:1];
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(present:)] autorelease];
     courses = [[NSMutableArray alloc] init];
     [super viewDidLoad];
 
@@ -126,9 +130,11 @@ numberOfRowsInSection:(NSInteger)section {
 -(void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSInteger courseId = [[[courses objectAtIndex:[indexPath section]] objectForKey:@"id"] integerValue];
+    //NSInteger courseId = [[[courses objectAtIndex:[indexPath section]] objectForKey:@"id"] integerValue];
     // Will be used to make request for assignments page
-    NSLog(@"%@/api/v1/courses/%d/assignments.json", canvas_host, courseId);
+    //NSLog(@"%@/api/v1/courses/%d/assignments.json", canvas_host, courseId);
+    CanvasCourseViewController *cc = [[CanvasCourseViewController alloc] initWithNibName:@"CanvasCourseViewController" bundle:nil];
+    [self.navigationController pushViewController:cc animated:YES];
 }
 
 /*

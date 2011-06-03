@@ -27,6 +27,8 @@
 		FCEF805E132F163500D3DA2E /* CTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF805C132F163500D3DA2E /* CTLoginViewController.m */; };
 		FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */; };
 		FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8060132F188000D3DA2E /* QuartzCore.framework */; };
+		FCFE1DD413995B1700D28E39 /* CanvasCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */; };
+		FCFE1DD513995B1700D28E39 /* CanvasCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,9 @@
 		FCEF805C132F163500D3DA2E /* CTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLoginViewController.m; sourceTree = "<group>"; };
 		FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTLoginViewController.xib; sourceTree = "<group>"; };
 		FCEF8060132F188000D3DA2E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FCFE1DD113995B1700D28E39 /* CanvasCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCourseViewController.h; sourceTree = "<group>"; };
+		FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasCourseViewController.m; sourceTree = "<group>"; };
+		FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasCourseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +151,9 @@
 				FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */,
 				FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */,
 				FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */,
+				FCFE1DD113995B1700D28E39 /* CanvasCourseViewController.h */,
+				FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */,
+				FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */,
 				FCEF8030132F0E4800D3DA2E /* MainWindow.xib */,
 				FCEF8025132F0E4800D3DA2E /* Supporting Files */,
 			);
@@ -214,6 +222,7 @@
 				FCEF8032132F0E4800D3DA2E /* MainWindow.xib in Resources */,
 				FCEF8038132F0E4800D3DA2E /* CanvasAppViewController.xib in Resources */,
 				FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */,
+				FCFE1DD513995B1700D28E39 /* CanvasCourseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +245,7 @@
 				FC9D4A2213307F9300B29EB3 /* SBJsonParser.m in Sources */,
 				FC9D4A2313307F9300B29EB3 /* SBJsonWriter.m in Sources */,
 				FC0285E2138319EF0074189C /* CustomCellBackground.m in Sources */,
+				FCFE1DD413995B1700D28E39 /* CanvasCourseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
