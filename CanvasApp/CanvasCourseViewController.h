@@ -12,8 +12,10 @@
 @interface CanvasCourseViewController : UIViewController {
     IBOutlet UITableView *courseList;
     NSMutableArray *assignments;
+    NSString *listTitle;
 }
 
 @property (nonatomic, retain) UITableView *courseList;
+@property (nonatomic, retain) NSString *listTitle;
 
 @end

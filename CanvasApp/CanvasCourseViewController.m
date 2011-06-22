@@ -8,18 +8,19 @@
 
 #import "CanvasCourseViewController.h"
 #import "CustomCellBackground.h"
+#import "CanvasOptionsView.h"
 #import "MyRequest.h"
 #import "JSON.h"
 
 
 @implementation CanvasCourseViewController
-@synthesize courseList;
+@synthesize courseList, listTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Assignments";
+        self.title = @"Course View";
     }
     return self;
 }
@@ -63,19 +64,22 @@
 #pragma mark UITableView DataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [assignments count];
+    if ([assignments count] > 0)
+        return 1;
+    else
+        return 0;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section {
-	return 1;
+	return 4;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
 		cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	//NSInteger row = [indexPath row];
-	NSInteger section = [indexPath section];
+	NSInteger row = [indexPath row];
+	//NSInteger section = [indexPath section];
 	static NSString *TableID = @"MyCell";
 	
     // Will make custom table view cell for this item
@@ -89,9 +93,44 @@ numberOfRowsInSection:(NSInteger)section {
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[[CustomCellBackground alloc] init] autorelease];
     ((CustomCellBackground *)cell.backgroundView).firstCell = indexPath.row == 0;
-    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 0;
-	
-	cell.textLabel.text = [[assignments objectAtIndex:section] objectForKey:@"name"];
+    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 3;
+    
+    switch (row) {
+        case 0:
+            cell.textLabel.text = @"Assignments";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", [assignments count]];
+            cell.textLabel.textColor = [UIColor blackColor];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            break;
+        case 1:
+            cell.textLabel.text = @"Discussions";
+            cell.detailTextLabel.text = @"Not Available";
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.textColor = [UIColor darkGrayColor];
+            cell.detailTextLabel.textColor = [UIColor darkGrayColor];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            break;
+        case 2:
+            cell.textLabel.text = @"Grades";
+            cell.detailTextLabel.text = @"Not Available";
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.textColor = [UIColor darkGrayColor];
+            cell.detailTextLabel.textColor = [UIColor darkGrayColor];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            break;
+        case 3:
+            cell.textLabel.text = @"Syllabus";
+            cell.detailTextLabel.text = @"Not Available";
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.textColor = [UIColor darkGrayColor];
+            cell.detailTextLabel.textColor = [UIColor darkGrayColor];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            break;
+        default:
+            break;
+    }
+    
     /*
     NSString *enrollment = [[NSString alloc] init];
     for (int i = 0; i < [[[courses objectAtIndex:section] objectForKey:@"enrollments"] count]; i++) {
@@ -102,7 +141,7 @@ numberOfRowsInSection:(NSInteger)section {
         }
     }*/
     //cell.detailTextLabel.text = enrollment;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     
 	return cell;
 }
@@ -110,18 +149,23 @@ numberOfRowsInSection:(NSInteger)section {
 -(void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //NSInteger courseId = [[[courses objectAtIndex:[indexPath section]] objectForKey:@"id"] integerValue];
+    //NSInteger courseId = [[[assignments objectAtIndex:[indexPath section]] objectForKey:@"id"] integerValue];
     // Will be used to make request for assignments page
     //NSLog(@"%@/api/v1/courses/%d/assignments.json", canvas_host, courseId);
     //CanvasCourseViewController *cc = [[CanvasCourseViewController alloc] initWithNibName:@"CanvasCourseViewController" bundle:nil];
     //[self.navigationController pushViewController:cc animated:YES];
+    if (indexPath.row == 0) {
+        CanvasOptionsView *cov = [[CanvasOptionsView alloc] initWithNibName:@"CanvasOptionsView" bundle:nil];
+        [cov setList:assignments];
+        [self.navigationController pushViewController:cov animated:YES];
+    }
 }
 
-/*
- -(NSString *)tableView:(UITableView *)tableView
+
+-(NSString *)tableView:(UITableView *)tableView
  titleForHeaderInSection:(NSInteger)section {
- return @"";	
- }*/
+    return listTitle;	
+}
 
 
 -(CGFloat)tableView:(UITableView *)tableView

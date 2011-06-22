@@ -77,7 +77,7 @@
 							<object class="IBUIActivityIndicatorView" id="651488610">
 								<reference key="NSNextResponder" ref="115028250"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{81, 37}, {20, 20}}</string>
+								<string key="NSFrame">{{82, 36}, {20, 20}}</string>
 								<reference key="NSSuperview" ref="115028250"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="349964037"/>

@@ -15,6 +15,8 @@
 		FC9D4A2113307F9300B29EB3 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A1913307F9300B29EB3 /* SBJsonBase.m */; };
 		FC9D4A2213307F9300B29EB3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A1B13307F9300B29EB3 /* SBJsonParser.m */; };
 		FC9D4A2313307F9300B29EB3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A1D13307F9300B29EB3 /* SBJsonWriter.m */; };
+		FCE2A03313AA777F007AF48F /* CanvasOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE2A03113AA777F007AF48F /* CanvasOptionsView.m */; };
+		FCE2A03413AA777F007AF48F /* CanvasOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE2A03213AA777F007AF48F /* CanvasOptionsView.xib */; };
 		FCEF801F132F0E4800D3DA2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF801E132F0E4800D3DA2E /* UIKit.framework */; };
 		FCEF8021132F0E4800D3DA2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8020132F0E4800D3DA2E /* Foundation.framework */; };
 		FCEF8023132F0E4800D3DA2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8022132F0E4800D3DA2E /* CoreGraphics.framework */; };
@@ -54,6 +56,9 @@
 		FC9D4A1B13307F9300B29EB3 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		FC9D4A1C13307F9300B29EB3 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		FC9D4A1D13307F9300B29EB3 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		FCE2A03013AA777F007AF48F /* CanvasOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasOptionsView.h; sourceTree = "<group>"; };
+		FCE2A03113AA777F007AF48F /* CanvasOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasOptionsView.m; sourceTree = "<group>"; };
+		FCE2A03213AA777F007AF48F /* CanvasOptionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasOptionsView.xib; sourceTree = "<group>"; };
 		FCEF801A132F0E4800D3DA2E /* CanvasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanvasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEF801E132F0E4800D3DA2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCEF8020132F0E4800D3DA2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -155,8 +160,8 @@
 				FC0285E1138319EF0074189C /* CustomCellBackground.m */,
 				FC9D4A1013307F9300B29EB3 /* JSON */,
 				FCFE1E021399640B00D28E39 /* Launch Pad */,
-				FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */,
 				FC9D4A0F13307EE300B29EB3 /* MyRequest.h */,
+				FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */,
 				FCEF805B132F163500D3DA2E /* CTLoginViewController.h */,
 				FCEF805C132F163500D3DA2E /* CTLoginViewController.m */,
 				FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */,
@@ -168,6 +173,9 @@
 				FCFE1DD113995B1700D28E39 /* CanvasCourseViewController.h */,
 				FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */,
 				FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */,
+				FCE2A03013AA777F007AF48F /* CanvasOptionsView.h */,
+				FCE2A03113AA777F007AF48F /* CanvasOptionsView.m */,
+				FCE2A03213AA777F007AF48F /* CanvasOptionsView.xib */,
 				FCEF8030132F0E4800D3DA2E /* MainWindow.xib */,
 				FCEF8025132F0E4800D3DA2E /* Supporting Files */,
 			);
@@ -254,6 +262,7 @@
 				FCFE1DD513995B1700D28E39 /* CanvasCourseViewController.xib in Resources */,
 				FCFE1DFF1399640300D28E39 /* LPViewController.xib in Resources */,
 				FCFE1E041399660800D28E39 /* view.png in Resources */,
+				FCE2A03413AA777F007AF48F /* CanvasOptionsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +289,7 @@
 				FCFE1DFE1399640300D28E39 /* LPViewController.m in Sources */,
 				FCFE1E001399640300D28E39 /* KHBadge.m in Sources */,
 				FCFE1E011399640300D28E39 /* LPButton.m in Sources */,
+				FCE2A03313AA777F007AF48F /* CanvasOptionsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

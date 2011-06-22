@@ -16,11 +16,13 @@
 
 @interface MyRequest : NSObject {
 	id <HTTPConnectionDelegate> delegate;
+    UIView *loadingView;
 	NSMutableData *buffer;	
 }
 
 @property (retain) id delegate;
 @property (nonatomic, retain) NSMutableData *buffer;
+@property (nonatomic, retain) UIView *loadingView;
 
 - (void)startRequest:(NSURL *)url;
 - (void)connectionSuccessful:(BOOL)success;

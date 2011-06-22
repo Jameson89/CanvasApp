@@ -7,9 +7,10 @@
 //
 
 #import "MyRequest.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MyRequest
-@synthesize delegate, buffer;
+@synthesize delegate, buffer, loadingView;
 
 - (id)init {
 	if (self == [super init]) {
@@ -30,7 +31,35 @@
     
 	NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
 	[connection start];
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;	
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+
+    
+    UIActivityIndicatorView *ai = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    ai.frame = CGRectMake(32, 10, 37, 37);
+    [ai startAnimating];
+    
+    
+    UILabel *ll = [[UILabel alloc] initWithFrame:CGRectMake(0, 45, 100, 18)];
+    ll.backgroundColor = [UIColor clearColor];
+    ll.textColor = [UIColor whiteColor];
+    ll.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
+    ll.textAlignment = UITextAlignmentCenter;
+    ll.text = @"Loading...";
+
+
+    
+    loadingView = [[UIView alloc]  initWithFrame:CGRectMake(110, 90, 100, 90)];
+    loadingView.backgroundColor = [UIColor blackColor];
+    loadingView.layer.cornerRadius = 10;
+    loadingView.alpha = .8;
+    
+    [loadingView addSubview:ll];
+    [loadingView addSubview:ai];
+    [[[self delegate] view] addSubview:loadingView];
+    
+    [ll release];
+    [ai release];	
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -57,6 +86,8 @@
 }
 
 - (void)connectionSuccessful:(BOOL)success {
+    [loadingView removeFromSuperview];
+    [loadingView release];
 	if([[self delegate] respondsToSelector:@selector(connectionSuccessful:request:)]) {
 		[[self delegate] connectionSuccessful:success request:self];
 	}
