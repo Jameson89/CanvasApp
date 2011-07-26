@@ -12,9 +12,11 @@
 @interface CanvasOptionsView : UIViewController {
     IBOutlet UITableView *listView;
     NSMutableArray *list;
+    NSString *course;
 }
 
 @property (nonatomic, retain) UITableView *listView;
 @property (nonatomic, retain) NSMutableArray *list;
+@property (nonatomic, retain) NSString *course;
 
 @end

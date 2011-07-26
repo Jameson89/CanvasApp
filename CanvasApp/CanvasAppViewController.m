@@ -73,7 +73,7 @@
         }
     } else {
         courses = [[jsonString JSONValue] copy];
-       // NSLog(@"%@", courses);
+       NSLog(@"%@", [jsonString JSONValue]);
         [courseList reloadData];
     }
 }
@@ -131,12 +131,13 @@ numberOfRowsInSection:(NSInteger)section {
 -(void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSInteger courseId = [[[courses objectAtIndex:[indexPath section]] objectForKey:@"id"] integerValue];    
+    NSString *course = [[courses objectAtIndex:[indexPath section]] objectForKey:@"id"];    
     CanvasCourseViewController *cc = [[CanvasCourseViewController alloc] initWithNibName:@"CanvasCourseViewController" bundle:nil];
     MyRequest *request = [[MyRequest alloc] init];
     [request setDelegate:cc];
-    [request startRequest:[NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/courses/%d/assignments.json", canvas_host, courseId]]]; 
+    [request startRequest:[NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/courses/%@/assignments.json", canvas_host, course]]]; 
     [request release];
+    [cc setCourse:course];
     [cc setListTitle:[[courses objectAtIndex:[indexPath section]] objectForKey:@"course_code"]];
     [self.navigationController pushViewController:cc animated:YES];
     //LPViewController *lp = [[LPViewController alloc] initWithNibName:@"LPViewController" bundle:nil];

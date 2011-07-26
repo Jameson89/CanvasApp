@@ -14,7 +14,7 @@
 
 
 @implementation CanvasCourseViewController
-@synthesize courseList, listTitle;
+@synthesize courseList, listTitle, course;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -157,6 +157,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         CanvasOptionsView *cov = [[CanvasOptionsView alloc] initWithNibName:@"CanvasOptionsView" bundle:nil];
         [cov setList:assignments];
+        [cov setCourse:course];
         [self.navigationController pushViewController:cov animated:YES];
     }
 }

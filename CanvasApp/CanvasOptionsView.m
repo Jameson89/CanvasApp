@@ -8,12 +8,13 @@
 
 #import "CanvasOptionsView.h"
 #import "CustomCellBackground.h"
+#import "CanvasSubmissionViewController.h"
 #import "MyRequest.h"
 #import "JSON.h"
 
 
 @implementation CanvasOptionsView
-@synthesize listView, list;
+@synthesize listView, list, course;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,7 +86,7 @@ numberOfRowsInSection:(NSInteger)section {
 	if (cell == nil) {
 		//NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"" owner:self options:nil];
 		//cell = [nib objectAtIndex:0];
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:TableID];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableID];
 	}
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[[CustomCellBackground alloc] init] autorelease];
@@ -93,6 +94,18 @@ numberOfRowsInSection:(NSInteger)section {
     ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 0;
 	
     cell.textLabel.text = [[list objectAtIndex:section] objectForKey:@"name"];
+    if (![[[list objectAtIndex:section] objectForKey:@"due_at"] isKindOfClass:[NSNull class]]) {
+
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"YYYY-MM-dd'T'HH:mm:ssZZZ"];
+    NSString *formattedDate = [[[list objectAtIndex:section] objectForKey:@"due_at"] substringToIndex:[[[list objectAtIndex:section] objectForKey:@"due_at"] length] -3];
+    formattedDate = [NSString stringWithFormat:@"%@00", formattedDate];
+    NSDate *date = [df dateFromString:formattedDate];
+    [df setDateFormat:@"'Due:' EEEE, MMM d '@' h:mm a"];
+    cell.detailTextLabel.text = [df stringFromDate:date];
+    }
+    //NSLog(@"%@", [[list objectAtIndex:section] objectForKey:@"id"]);
+   // cell.detailTextLabel.text = [[list objectAtIndex:section] objectForKey:@"id"];
 	//cell.textLabel.text = [NSString stringWithFormat:@"%d", [list count]];
     /*
      NSString *enrollment = [[NSString alloc] init];
@@ -117,6 +130,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //NSLog(@"%@/api/v1/courses/%d/assignments.json", canvas_host, courseId);
     //CanvasCourseViewController *cc = [[CanvasCourseViewController alloc] initWithNibName:@"CanvasCourseViewController" bundle:nil];
     //[self.navigationController pushViewController:cc animated:YES];
+    CanvasSubmissionViewController *sub = [[CanvasSubmissionViewController alloc] initWithNibName:@"CanvasSubmissionViewController" bundle:nil];
+    NSInteger section = [indexPath section];
+    MyRequest *request = [[MyRequest alloc] init];
+    [request setDelegate:sub];
+    [request startRequest:[NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/courses/%@/assignments/%@/submissions.json", canvas_host, course, [[list objectAtIndex:section] objectForKey:@"id"]]]];
+    [self.navigationController pushViewController:sub animated:YES];
 }
 
 /*
@@ -155,6 +174,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         NSLog(@"%@", list);
         [listView reloadData];
     }
+    
 }
 
 

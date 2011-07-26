@@ -13,9 +13,11 @@
     IBOutlet UITableView *courseList;
     NSMutableArray *assignments;
     NSString *listTitle;
+    NSString *course;
 }
 
 @property (nonatomic, retain) UITableView *courseList;
 @property (nonatomic, retain) NSString *listTitle;
+@property (nonatomic, retain) NSString *course;
 
 @end

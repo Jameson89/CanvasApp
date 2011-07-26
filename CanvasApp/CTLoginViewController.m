@@ -8,6 +8,7 @@
 
 #define kUsername @"username"
 #define kPassword @"password"
+#define kAccessToken @"accesstoken"
 
 #import "CTLoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -27,7 +28,7 @@
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section {
 	tableView.backgroundColor = [UIColor clearColor];//[UIColor colorWithRed:.682 green:.733 blue:.71 alpha:1];
-		return 2;
+		return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -50,19 +51,19 @@ numberOfRowsInSection:(NSInteger)section {
 	}
     cell.backgroundView = [[[CustomCellBackground alloc] init] autorelease];
     ((CustomCellBackground *)cell.backgroundView).firstCell = indexPath.row == 0;
-    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 1;
+    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 0;
 	if (row == 0) {
-		
+		//username.text = @"fEOYiDUFOf8HxqSsVytrNCKHVVkZ9PxP3EVQxkWp4AETpgkpDc7xPyALxrcvAy9A";
 		username.backgroundColor = [UIColor clearColor];
-		username.placeholder = @"Username";
+		username.placeholder = @"Access Token";
 		username.returnKeyType = UIReturnKeyGo;
 		username.delegate = self;
 		username.clearButtonMode = UITextFieldViewModeWhileEditing;
 		username.autocorrectionType = UITextAutocorrectionTypeNo;
 		username.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-		if (![[defaults objectForKey:kUsername] isEqualToString:@""] || [defaults objectForKey:kUsername] != nil) {
-			username.text = [defaults objectForKey:kUsername];
+		if (![[defaults objectForKey:kAccessToken] isEqualToString:@""] || [defaults objectForKey:kAccessToken] != nil) {
+			username.text = [defaults objectForKey:kAccessToken];
 		}
 		
 	} else {
@@ -93,16 +94,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	}
 }
 
+-(NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section {
+	return @"Access Token";	
+}
 #pragma mark -
 #pragma mark  UITextField Delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField { 
 	
-	if (username.text && password.text && ![username.text isEqualToString:@""]  && ![password.text isEqualToString:@""]) {
+	if (username.text /*&& password.text*/ && ![username.text isEqualToString:@""] /* && ![password.text isEqualToString:@""]*/) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:username.text forKey:kUsername];
-        [defaults setObject:password.text forKey:kPassword];
-        [self showLoading];
+        [defaults setObject:username.text forKey:kAccessToken];
+        //[defaults setObject:password.text forKey:kPassword];
+        [defaults synchronize];
+        //[self showLoading];
 		MyRequest *request = [[MyRequest alloc] init];
         [request setDelegate:self];
         [request startRequest:[NSURL URLWithString:[NSString stringWithFormat:@"%@/api/v1/courses.json", canvas_host]]]; 
@@ -110,7 +116,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error:" 
-                                                        message:@"Username / Password required." 
+                                                        message:@"Access Token Required." 
                                                        delegate:self 
                                               cancelButtonTitle:@"OK" 
                                               otherButtonTitles:nil, nil];
@@ -123,8 +129,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)connectionSuccessful:(BOOL)success request:(id)request {
     MyRequest *response = (MyRequest *)request;
 	NSString *jsonString = [[NSString alloc] initWithData:response.buffer encoding:NSUTF8StringEncoding];
-	//[data release];
 	NSDictionary *results = [jsonString JSONValue];
+    NSLog(@"%@", results);
     if ([results isKindOfClass:[NSDictionary class]]) {
         if ([results objectForKey:@"errors"]) {
             loadingView.hidden = YES;

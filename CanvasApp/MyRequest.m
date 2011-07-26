@@ -8,6 +8,13 @@
 
 #import "MyRequest.h"
 #import <QuartzCore/QuartzCore.h>
+#define kAccessToken @"accesstoken"
+//TOKENS
+// Canvas Teacher
+//#define kAccessToken @"fEOYiDUFOf8HxqSsVytrNCKHVVkZ9PxP3EVQxkWp4AETpgkpDc7xPyALxrcvAy9A"
+
+// WSU API
+//#define kAccessToken @"YvorTmtYXBr1VH9HgjVdVUrVIYqj3UfxCAv0qyhu76k4yb0Qcj5e6kj9nj8Ud5w7"
 
 @implementation MyRequest
 @synthesize delegate, buffer, loadingView;
@@ -21,13 +28,21 @@
 
 - (void)startRequest:(NSURL *)url {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *username = [defaults objectForKey:@"username"];
-	NSString *password = [defaults objectForKey:@"password"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    NSString *authString = [self Base64Encode:[[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding]];
+    //NSLog(@"%@", [defaults objectForKey:kAccessToken]);
+    //@"YvorTmtYXBr1VH9HgjVdVUrVIYqj3UfxCAv0qyhu76k4yb0Qcj5e6kj9nj8Ud5w7";
+	NSString *accessToken = [defaults objectForKey:kAccessToken];
+    NSLog(@"%@", accessToken);
+    NSString *appendToken = [NSString stringWithFormat:@"%@?access_token=%@", [url description], accessToken];
     
-    authString = [NSString stringWithFormat: @"Basic %@", authString];
-    [request setValue:authString forHTTPHeaderField:@"Authorization"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:appendToken]
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                timeoutInterval:30.0];
+    //[request setHTTPMethod:@"GET"];
+    //NSString *authString = [[self Base64Encode:[[NSString stringWithFormat:@"%@:%@", username, password] dataUsingEncoding:NSUTF8StringEncoding]] copy];
+    
+    //authString = [NSString stringWithFormat: @"Basic %@", authString];
+    //NSLog(@"%@", authString);
+    //[request setValue:authString forHTTPHeaderField:@"Authorization"];
     
 	NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
 	[connection start];
