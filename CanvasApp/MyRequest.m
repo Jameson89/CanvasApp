@@ -33,7 +33,7 @@
 	NSString *accessToken = [defaults objectForKey:kAccessToken];
     NSLog(@"%@", accessToken);
     NSString *appendToken = [NSString stringWithFormat:@"%@?access_token=%@", [url description], accessToken];
-    
+     NSLog(@"%@", appendToken);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:appendToken]
                                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                 timeoutInterval:30.0];
@@ -64,7 +64,7 @@
 
 
     
-    loadingView = [[UIView alloc]  initWithFrame:CGRectMake(110, 90, 100, 90)];
+    loadingView = [[UIView alloc]  initWithFrame:CGRectMake(110, 90, 100, 70)];
     loadingView.backgroundColor = [UIColor blackColor];
     loadingView.layer.cornerRadius = 10;
     loadingView.alpha = .8;

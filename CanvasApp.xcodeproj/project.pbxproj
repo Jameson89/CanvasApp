@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		FC0285E2138319EF0074189C /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0285E1138319EF0074189C /* CustomCellBackground.m */; };
+		FC27DA1413EA65110089B09D /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC27DA1313EA65110089B09D /* Kal.bundle */; };
+		FC27DA1B13EA6DA10089B09D /* EventViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC27DA1813EA6DA10089B09D /* EventViewCell.m */; };
+		FC27DA1C13EA6DA10089B09D /* EventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC27DA1A13EA6DA10089B09D /* EventViewCell.xib */; };
+		FC27DA1E13EA6F2F0089B09D /* icon_purple_dot.gif in Resources */ = {isa = PBXBuildFile; fileRef = FC27DA1D13EA6F2F0089B09D /* icon_purple_dot.gif */; };
+		FC3CCE8813EA57400097C050 /* CalendarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3CCE8713EA57400097C050 /* CalendarDataSource.m */; };
+		FC3CCE8C13EA59670097C050 /* CTTimeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3CCE8B13EA59670097C050 /* CTTimeObject.m */; };
+		FC3CCE9E13EA5EFC0097C050 /* libKal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3CCE9D13EA5E430097C050 /* libKal.a */; };
 		FC9D4A0D13307EDA00B29EB3 /* MyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */; };
 		FC9D4A1E13307F9300B29EB3 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A1313307F9300B29EB3 /* NSObject+SBJSON.m */; };
 		FC9D4A1F13307F9300B29EB3 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4A1513307F9300B29EB3 /* NSString+SBJSON.m */; };
@@ -32,6 +39,7 @@
 		FCEF805E132F163500D3DA2E /* CTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF805C132F163500D3DA2E /* CTLoginViewController.m */; };
 		FCEF805F132F163500D3DA2E /* CTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */; };
 		FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEF8060132F188000D3DA2E /* QuartzCore.framework */; };
+		FCFAEED713E61E9B001372F3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCFAEED613E61E9B001372F3 /* icon.png */; };
 		FCFE1DD413995B1700D28E39 /* CanvasCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */; };
 		FCFE1DD513995B1700D28E39 /* CanvasCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */; };
 		FCFE1DFE1399640300D28E39 /* LPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFE1DF81399640300D28E39 /* LPViewController.m */; };
@@ -41,9 +49,29 @@
 		FCFE1E041399660800D28E39 /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = FCFE1E031399660800D28E39 /* view.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FC3CCE9C13EA5E430097C050 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3CCE9513EA5E430097C050 /* Kal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Kal;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		FC0285E0138319EF0074189C /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
 		FC0285E1138319EF0074189C /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
+		FC27DA1313EA65110089B09D /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Kal.bundle; path = "../../../../../Downloads/klazuka-Kal-b2e164c-1/src/Kal.bundle"; sourceTree = "<group>"; };
+		FC27DA1813EA6DA10089B09D /* EventViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewCell.m; sourceTree = "<group>"; };
+		FC27DA1913EA6DA10089B09D /* EventViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewCell.h; sourceTree = "<group>"; };
+		FC27DA1A13EA6DA10089B09D /* EventViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewCell.xib; sourceTree = "<group>"; };
+		FC27DA1D13EA6F2F0089B09D /* icon_purple_dot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icon_purple_dot.gif; sourceTree = "<group>"; };
+		FC3CCE8613EA57400097C050 /* CalendarDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDataSource.h; sourceTree = "<group>"; };
+		FC3CCE8713EA57400097C050 /* CalendarDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDataSource.m; sourceTree = "<group>"; };
+		FC3CCE8A13EA59670097C050 /* CTTimeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTimeObject.h; sourceTree = "<group>"; };
+		FC3CCE8B13EA59670097C050 /* CTTimeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTimeObject.m; sourceTree = "<group>"; };
+		FC3CCE9513EA5E430097C050 /* Kal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kal.xcodeproj; path = "../../../../Downloads/klazuka-Kal-b2e164c-1/src/Kal.xcodeproj"; sourceTree = "<group>"; };
 		FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRequest.m; sourceTree = "<group>"; };
 		FC9D4A0F13307EE300B29EB3 /* MyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRequest.h; sourceTree = "<group>"; };
 		FC9D4A1113307F9300B29EB3 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -84,6 +112,7 @@
 		FCEF805C132F163500D3DA2E /* CTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLoginViewController.m; sourceTree = "<group>"; };
 		FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTLoginViewController.xib; sourceTree = "<group>"; };
 		FCEF8060132F188000D3DA2E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FCFAEED613E61E9B001372F3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		FCFE1DD113995B1700D28E39 /* CanvasCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasCourseViewController.h; sourceTree = "<group>"; };
 		FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasCourseViewController.m; sourceTree = "<group>"; };
 		FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasCourseViewController.xib; sourceTree = "<group>"; };
@@ -102,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC3CCE9E13EA5EFC0097C050 /* libKal.a in Frameworks */,
 				FCEF8061132F188000D3DA2E /* QuartzCore.framework in Frameworks */,
 				FCEF801F132F0E4800D3DA2E /* UIKit.framework in Frameworks */,
 				FCEF8021132F0E4800D3DA2E /* Foundation.framework in Frameworks */,
@@ -112,6 +142,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC3CCE8913EA57590097C050 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				FC27DA1813EA6DA10089B09D /* EventViewCell.m */,
+				FC27DA1913EA6DA10089B09D /* EventViewCell.h */,
+				FC27DA1A13EA6DA10089B09D /* EventViewCell.xib */,
+				FC3CCE8A13EA59670097C050 /* CTTimeObject.h */,
+				FC3CCE8B13EA59670097C050 /* CTTimeObject.m */,
+				FC3CCE8613EA57400097C050 /* CalendarDataSource.h */,
+				FC3CCE8713EA57400097C050 /* CalendarDataSource.m */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		FC3CCE9613EA5E430097C050 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC3CCE9D13EA5E430097C050 /* libKal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FC9D4A1013307F9300B29EB3 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +187,7 @@
 		FCEF800F132F0E4800D3DA2E = {
 			isa = PBXGroup;
 			children = (
+				FC3CCE9513EA5E430097C050 /* Kal.xcodeproj */,
 				FCEF8024132F0E4800D3DA2E /* CanvasApp */,
 				FCEF801D132F0E4800D3DA2E /* Frameworks */,
 				FCEF801B132F0E4800D3DA2E /* Products */,
@@ -163,6 +216,10 @@
 		FCEF8024132F0E4800D3DA2E /* CanvasApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC27DA1313EA65110089B09D /* Kal.bundle */,
+				FC3CCE8913EA57590097C050 /* Calendar */,
+				FCEF802D132F0E4800D3DA2E /* CanvasAppAppDelegate.h */,
+				FCEF802E132F0E4800D3DA2E /* CanvasAppAppDelegate.m */,
 				FC0285E0138319EF0074189C /* CustomCellBackground.h */,
 				FC0285E1138319EF0074189C /* CustomCellBackground.m */,
 				FC9D4A1013307F9300B29EB3 /* JSON */,
@@ -172,8 +229,6 @@
 				FCEF805B132F163500D3DA2E /* CTLoginViewController.h */,
 				FCEF805C132F163500D3DA2E /* CTLoginViewController.m */,
 				FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */,
-				FCEF802D132F0E4800D3DA2E /* CanvasAppAppDelegate.h */,
-				FCEF802E132F0E4800D3DA2E /* CanvasAppAppDelegate.m */,
 				FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */,
 				FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */,
 				FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */,
@@ -195,10 +250,12 @@
 		FCEF8025132F0E4800D3DA2E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC27DA1D13EA6F2F0089B09D /* icon_purple_dot.gif */,
 				FCEF8026132F0E4800D3DA2E /* CanvasApp-Info.plist */,
 				FCEF8027132F0E4800D3DA2E /* InfoPlist.strings */,
 				FCEF802A132F0E4800D3DA2E /* CanvasApp-Prefix.pch */,
 				FCD13B3313D8E062001CC5C3 /* lock.png */,
+				FCFAEED613E61E9B001372F3 /* icon.png */,
 				FCEF802B132F0E4800D3DA2E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -254,12 +311,28 @@
 			mainGroup = FCEF800F132F0E4800D3DA2E;
 			productRefGroup = FCEF801B132F0E4800D3DA2E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FC3CCE9613EA5E430097C050 /* Products */;
+					ProjectRef = FC3CCE9513EA5E430097C050 /* Kal.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FCEF8019132F0E4800D3DA2E /* CanvasApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FC3CCE9D13EA5E430097C050 /* libKal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKal.a;
+			remoteRef = FC3CCE9C13EA5E430097C050 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FCEF8018132F0E4800D3DA2E /* Resources */ = {
@@ -276,6 +349,10 @@
 				FCE2A03413AA777F007AF48F /* CanvasOptionsView.xib in Resources */,
 				FCDFEF1113CAE35B006D58C4 /* CanvasSubmissionViewController.xib in Resources */,
 				FCD13B3413D8E062001CC5C3 /* lock.png in Resources */,
+				FCFAEED713E61E9B001372F3 /* icon.png in Resources */,
+				FC27DA1413EA65110089B09D /* Kal.bundle in Resources */,
+				FC27DA1C13EA6DA10089B09D /* EventViewCell.xib in Resources */,
+				FC27DA1E13EA6F2F0089B09D /* icon_purple_dot.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +381,9 @@
 				FCFE1E011399640300D28E39 /* LPButton.m in Sources */,
 				FCE2A03313AA777F007AF48F /* CanvasOptionsView.m in Sources */,
 				FCDFEF1013CAE35B006D58C4 /* CanvasSubmissionViewController.m in Sources */,
+				FC3CCE8813EA57400097C050 /* CalendarDataSource.m in Sources */,
+				FC3CCE8C13EA59670097C050 /* CTTimeObject.m in Sources */,
+				FC27DA1B13EA6DA10089B09D /* EventViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +458,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CanvasApp/CanvasApp-Prefix.pch";
 				INFOPLIST_FILE = "CanvasApp/CanvasApp-Info.plist";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "/Users/Klint/Downloads/Kal/src/**";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/Klint/Downloads/Kal/src/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,6 +474,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CanvasApp/CanvasApp-Prefix.pch";
 				INFOPLIST_FILE = "CanvasApp/CanvasApp-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

@@ -7,8 +7,10 @@
 //
 
 #import "CanvasAppAppDelegate.h"
-
+#import "CalendarDataSource.h"
 #import "CanvasAppViewController.h"
+#import "Kal.h"
+//#import "CalendarDataSource.h"
 
 @implementation CanvasAppAppDelegate
 
@@ -16,11 +18,19 @@
 @synthesize window=_window;
 
 @synthesize navController=_viewController;
+@synthesize calendar, source;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-     
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeSelected:) name:@"KalDataSourceChangedNotification" object:nil];
+    
+    // Calendar for Creating Appointments
+	source			= [[CalendarDataSource alloc] init];
+	calendar		= [[KalViewController alloc] init];
+	calendar.dataSource = source;
+	calendar.delegate = self;
+    calendar.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)] autorelease];
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -64,6 +74,18 @@
      See also applicationDidEnterBackground:.
      */
 }
+
+#pragma mark -
+#pragma mark Calendar Delegate
+
+- (void)showAndSelectToday {
+	[calendar showAndSelectDate:[NSDate date]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 - (void)dealloc
 {

@@ -7,6 +7,8 @@
 //
 
 #import "CanvasCourseViewController.h"
+#import "KalViewController.h"
+#import "CanvasAppAppDelegate.h"
 #import "CustomCellBackground.h"
 #import "CanvasOptionsView.h"
 #import "MyRequest.h"
@@ -72,7 +74,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section {
-	return 4;
+	return 5;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
@@ -93,7 +95,7 @@ numberOfRowsInSection:(NSInteger)section {
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView = [[[CustomCellBackground alloc] init] autorelease];
     ((CustomCellBackground *)cell.backgroundView).firstCell = indexPath.row == 0;
-    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 3;
+    ((CustomCellBackground *)cell.backgroundView).lastCell = indexPath.row == 4;
     
     switch (row) {
         case 0:
@@ -127,6 +129,12 @@ numberOfRowsInSection:(NSInteger)section {
             cell.detailTextLabel.textColor = [UIColor darkGrayColor];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             break;
+        case 4:
+            cell.textLabel.text = @"Calendar";
+            cell.textLabel.textColor = [UIColor blackColor];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            break;
         default:
             break;
     }
@@ -159,6 +167,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [cov setList:assignments];
         [cov setCourse:course];
         [self.navigationController pushViewController:cov animated:YES];
+    }
+    
+    if (indexPath.row == 4) {
+        [self.navigationController pushViewController:(KalViewController *)[(CanvasAppAppDelegate *)[[UIApplication sharedApplication] delegate] calendar] animated:YES];
     }
 }
 

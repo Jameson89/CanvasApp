@@ -21,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Assignments";
+        self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Reminders" style:UIBarButtonItemStyleBordered target:self action:@selector(showReminders)] autorelease];
     }
     return self;
 }
@@ -104,19 +105,7 @@ numberOfRowsInSection:(NSInteger)section {
     [df setDateFormat:@"'Due:' EEEE, MMM d '@' h:mm a"];
     cell.detailTextLabel.text = [df stringFromDate:date];
     }
-    //NSLog(@"%@", [[list objectAtIndex:section] objectForKey:@"id"]);
-   // cell.detailTextLabel.text = [[list objectAtIndex:section] objectForKey:@"id"];
-	//cell.textLabel.text = [NSString stringWithFormat:@"%d", [list count]];
-    /*
-     NSString *enrollment = [[NSString alloc] init];
-     for (int i = 0; i < [[[courses objectAtIndex:section] objectForKey:@"enrollments"] count]; i++) {
-     if (i == 0) {
-     enrollment = [NSString stringWithFormat:@"%@", [[[[courses objectAtIndex:section] objectForKey:@"enrollments"] objectAtIndex:i] objectForKey:@"type"]]; 
-     } else {
-     enrollment = [NSString stringWithFormat:@"%@, %@", enrollment, [[[[courses objectAtIndex:section] objectForKey:@"enrollments"] objectAtIndex:i] objectForKey:@"type"]]; 
-     }
-     }*/
-    //cell.detailTextLabel.text = enrollment;
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
 	return cell;
@@ -175,6 +164,34 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         [listView reloadData];
     }
     
+}
+
+- (void)showReminders {
+    NSLog(@"Called");
+}
+- (void)scheduleNotification {
+	
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    Class cls = NSClassFromString(@"UILocalNotification");
+    if (cls != nil) {
+		for (NSDictionary *event in list) {
+            UILocalNotification *notif = [[cls alloc] init];
+            //notif.fireDate = [datePicker date];
+            notif.timeZone = [NSTimeZone defaultTimeZone];
+		
+            notif.alertBody = @"Did you forget something?";
+            notif.alertAction = @"Show Me";
+            notif.soundName = UILocalNotificationDefaultSoundName;
+		
+            NSDictionary *userDict = [NSDictionary dictionaryWithObject:@"Text"
+                                                             forKey:kRemindMeNotificationDataKey];
+            notif.userInfo = userDict;
+		
+            [[UIApplication sharedApplication] scheduleLocalNotification:notif];
+            [notif release];
+        }
+    }
 }
 
 
