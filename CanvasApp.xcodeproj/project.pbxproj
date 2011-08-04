@@ -145,6 +145,7 @@
 		FC3CCE8913EA57590097C050 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				FC27DA1313EA65110089B09D /* Kal.bundle */,
 				FC27DA1813EA6DA10089B09D /* EventViewCell.m */,
 				FC27DA1913EA6DA10089B09D /* EventViewCell.h */,
 				FC27DA1A13EA6DA10089B09D /* EventViewCell.xib */,
@@ -184,6 +185,67 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		FCB0463013EA7C8E00C8A0B9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FCEF805B132F163500D3DA2E /* CTLoginViewController.h */,
+				FCEF805C132F163500D3DA2E /* CTLoginViewController.m */,
+				FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		FCB0463113EA7CB800C8A0B9 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */,
+				FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */,
+				FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		FCB0463213EA7CD500C8A0B9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FC0285E0138319EF0074189C /* CustomCellBackground.h */,
+				FC0285E1138319EF0074189C /* CustomCellBackground.m */,
+				FC9D4A0F13307EE300B29EB3 /* MyRequest.h */,
+				FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		FCB0463313EA7D1300C8A0B9 /* Course View */ = {
+			isa = PBXGroup;
+			children = (
+				FCFE1DD113995B1700D28E39 /* CanvasCourseViewController.h */,
+				FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */,
+				FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */,
+			);
+			name = "Course View";
+			sourceTree = "<group>";
+		};
+		FCB0463413EA7D5800C8A0B9 /* Submission View */ = {
+			isa = PBXGroup;
+			children = (
+				FCDFEF0D13CAE35A006D58C4 /* CanvasSubmissionViewController.h */,
+				FCDFEF0E13CAE35A006D58C4 /* CanvasSubmissionViewController.m */,
+				FCDFEF0F13CAE35A006D58C4 /* CanvasSubmissionViewController.xib */,
+			);
+			name = "Submission View";
+			sourceTree = "<group>";
+		};
+		FCB0463513EA7D8900C8A0B9 /* Assingnment View */ = {
+			isa = PBXGroup;
+			children = (
+				FCE2A03013AA777F007AF48F /* CanvasOptionsView.h */,
+				FCE2A03113AA777F007AF48F /* CanvasOptionsView.m */,
+				FCE2A03213AA777F007AF48F /* CanvasOptionsView.xib */,
+			);
+			name = "Assingnment View";
+			sourceTree = "<group>";
+		};
 		FCEF800F132F0E4800D3DA2E = {
 			isa = PBXGroup;
 			children = (
@@ -216,32 +278,17 @@
 		FCEF8024132F0E4800D3DA2E /* CanvasApp */ = {
 			isa = PBXGroup;
 			children = (
-				FC27DA1313EA65110089B09D /* Kal.bundle */,
-				FC3CCE8913EA57590097C050 /* Calendar */,
 				FCEF802D132F0E4800D3DA2E /* CanvasAppAppDelegate.h */,
 				FCEF802E132F0E4800D3DA2E /* CanvasAppAppDelegate.m */,
-				FC0285E0138319EF0074189C /* CustomCellBackground.h */,
-				FC0285E1138319EF0074189C /* CustomCellBackground.m */,
+				FCB0463213EA7CD500C8A0B9 /* Shared */,
+				FCB0463013EA7C8E00C8A0B9 /* Login */,
+				FCB0463113EA7CB800C8A0B9 /* Main View */,
+				FCB0463313EA7D1300C8A0B9 /* Course View */,
+				FCB0463513EA7D8900C8A0B9 /* Assingnment View */,
+				FCB0463413EA7D5800C8A0B9 /* Submission View */,
+				FC3CCE8913EA57590097C050 /* Calendar */,
 				FC9D4A1013307F9300B29EB3 /* JSON */,
 				FCFE1E021399640B00D28E39 /* Launch Pad */,
-				FC9D4A0F13307EE300B29EB3 /* MyRequest.h */,
-				FC9D4A0C13307EDA00B29EB3 /* MyRequest.m */,
-				FCEF805B132F163500D3DA2E /* CTLoginViewController.h */,
-				FCEF805C132F163500D3DA2E /* CTLoginViewController.m */,
-				FCEF805D132F163500D3DA2E /* CTLoginViewController.xib */,
-				FCEF8033132F0E4800D3DA2E /* CanvasAppViewController.h */,
-				FCEF8034132F0E4800D3DA2E /* CanvasAppViewController.m */,
-				FCEF8036132F0E4800D3DA2E /* CanvasAppViewController.xib */,
-				FCFE1DD113995B1700D28E39 /* CanvasCourseViewController.h */,
-				FCFE1DD213995B1700D28E39 /* CanvasCourseViewController.m */,
-				FCFE1DD313995B1700D28E39 /* CanvasCourseViewController.xib */,
-				FCDFEF0D13CAE35A006D58C4 /* CanvasSubmissionViewController.h */,
-				FCDFEF0E13CAE35A006D58C4 /* CanvasSubmissionViewController.m */,
-				FCDFEF0F13CAE35A006D58C4 /* CanvasSubmissionViewController.xib */,
-				FCE2A03013AA777F007AF48F /* CanvasOptionsView.h */,
-				FCE2A03113AA777F007AF48F /* CanvasOptionsView.m */,
-				FCE2A03213AA777F007AF48F /* CanvasOptionsView.xib */,
-				FCEF8030132F0E4800D3DA2E /* MainWindow.xib */,
 				FCEF8025132F0E4800D3DA2E /* Supporting Files */,
 			);
 			path = CanvasApp;
@@ -250,6 +297,7 @@
 		FCEF8025132F0E4800D3DA2E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCEF8030132F0E4800D3DA2E /* MainWindow.xib */,
 				FC27DA1D13EA6F2F0089B09D /* icon_purple_dot.gif */,
 				FCEF8026132F0E4800D3DA2E /* CanvasApp-Info.plist */,
 				FCEF8027132F0E4800D3DA2E /* InfoPlist.strings */,

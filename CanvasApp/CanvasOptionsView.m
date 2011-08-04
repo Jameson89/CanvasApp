@@ -21,7 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Assignments";
-        self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Reminders" style:UIBarButtonItemStyleBordered target:self action:@selector(showReminders)] autorelease];
+        //self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Reminders" style:UIBarButtonItemStyleBordered target:self action:@selector(showReminders)] autorelease];
     }
     return self;
 }
@@ -136,7 +136,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 -(CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;//88;
+    return 60;//88;
 }
 
 - (void)connectionSuccessful:(BOOL)success request:(id)request{
@@ -160,39 +160,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         }
     } else {
         list = [[jsonString JSONValue] copy];
-        NSLog(@"%@", list);
+        //NSLog(@"%@", list);
         [listView reloadData];
     }
     
 }
 
-- (void)showReminders {
-    NSLog(@"Called");
-}
-- (void)scheduleNotification {
-	
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    
-    Class cls = NSClassFromString(@"UILocalNotification");
-    if (cls != nil) {
-		for (NSDictionary *event in list) {
-            UILocalNotification *notif = [[cls alloc] init];
-            //notif.fireDate = [datePicker date];
-            notif.timeZone = [NSTimeZone defaultTimeZone];
-		
-            notif.alertBody = @"Did you forget something?";
-            notif.alertAction = @"Show Me";
-            notif.soundName = UILocalNotificationDefaultSoundName;
-		
-            NSDictionary *userDict = [NSDictionary dictionaryWithObject:@"Text"
-                                                             forKey:kRemindMeNotificationDataKey];
-            notif.userInfo = userDict;
-		
-            [[UIApplication sharedApplication] scheduleLocalNotification:notif];
-            [notif release];
-        }
-    }
-}
 
 
 @end
