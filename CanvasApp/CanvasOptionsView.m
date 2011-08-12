@@ -7,6 +7,7 @@
 //
 
 #import "CanvasOptionsView.h"
+#import "CanvasAppAppDelegate.h"
 #import "CustomCellBackground.h"
 #import "CanvasSubmissionViewController.h"
 #import "MyRequest.h"
@@ -43,9 +44,13 @@
 
 - (void)viewDidLoad
 {
+    //delegate = (CanvasAppAppDelegate *)[[UIApplication sharedApplication] delegate];
+    //delegate.courseID = course;
+    
     //list = [[NSMutableArray alloc] init];
     //[listView reloadData];
     [super viewDidLoad];
+    NSLog(@"%@",course);
     // Do any additional setup after loading the view from its nib.
 }
 

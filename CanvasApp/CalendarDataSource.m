@@ -12,6 +12,8 @@
 #import "CanvasAppAppDelegate.h"
 #import "EventViewCell.h"
 
+#define kAccessToken @"accesstoken"
+
 static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 {
     return [date compare:begin] != NSOrderedAscending && [date compare:end] != NSOrderedDescending;
@@ -70,12 +72,16 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 }
 
 #pragma mark Fetch from the internet
-
+//@"https://learn-wsu.uen.org/api/v1/courses/895/assignments.json?access_token=YvorTmtYXBr1VH9HgjVdVUrVIYqj3UfxCAv0qyhu76k4yb0Qcj5e6kj9nj8Ud5w7"
 - (void)fetchHolidays {
     dataReady = NO;
 	[days removeAllObjects];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *accessToken = [defaults objectForKey:kAccessToken];
+    //NSString *courseID = [appDelegate courseID];
+    NSString *url = [NSString stringWithFormat:@"%@/api/v1/courses/%@/assignments.json?access_token=%@", canvas_host, [appDelegate courseID], accessToken];
     
-    NSURLConnection *conn = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://learn-wsu.uen.org/api/v1/courses/895/assignments.json?access_token=YvorTmtYXBr1VH9HgjVdVUrVIYqj3UfxCAv0qyhu76k4yb0Qcj5e6kj9nj8Ud5w7"]] delegate:self];
+    NSURLConnection *conn = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] delegate:self];
     [conn start];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
@@ -97,10 +103,15 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
     NSArray *results = [str JSONValue];
     for ( NSDictionary *event in results) {
         CTTimeObject *time = [[CTTimeObject alloc] init];
-        time.date = [self parseGMTDate:[event objectForKey:@"due_at"]];
-        time.title = [event objectForKey:@"name"];
-        [days addObject:time];
+        if (![[event objectForKey:@"due_at"] isKindOfClass:[NSNull class]] ) {
+            time.date = [self parseGMTDate:[event objectForKey:@"due_at"]];
+            time.title = [event objectForKey:@"name"];
+            [days addObject:time];
+            
+        }
         [time release];
+        //time.date = [self parseGMTDate:[event objectForKey:@"due_at"]];
+
     }
 
 	

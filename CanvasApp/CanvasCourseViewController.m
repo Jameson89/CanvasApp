@@ -46,6 +46,8 @@
 {
     assignments = [[NSMutableArray alloc] init];
     [super viewDidLoad];
+   // NSLog(@"%@",course);
+
     // Do any additional setup after loading the view from its nib.
 }
 

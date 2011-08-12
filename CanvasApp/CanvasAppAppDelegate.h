@@ -14,6 +14,7 @@
 @interface CanvasAppAppDelegate : NSObject <UIApplicationDelegate, UITableViewDelegate> {
     id source;
     KalViewController *calendar;
+    NSString *courseID;
 
 }
 
@@ -22,5 +23,6 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *navController;//CanvasAppViewController *viewController;
 @property (nonatomic, retain) id source;
 @property (nonatomic, retain) KalViewController *calendar;
+@property (nonatomic, retain) NSString *courseID;
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CanvasAppAppDelegate.h"
 
 @interface CanvasOptionsView : UIViewController {
+    CanvasAppAppDelegate *delegate;
     IBOutlet UITableView *listView;
     NSMutableArray *list;
     NSString *course;

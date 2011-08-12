@@ -28,9 +28,11 @@
 
 - (void)startRequest:(NSURL *)url {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"fEOYiDUFOf8HxqSsVytrNCKHVVkZ9PxP3EVQxkWp4AETpgkpDc7xPyALxrcvAy9A" forKey:kAccessToken];
     //NSLog(@"%@", [defaults objectForKey:kAccessToken]);
     //@"YvorTmtYXBr1VH9HgjVdVUrVIYqj3UfxCAv0qyhu76k4yb0Qcj5e6kj9nj8Ud5w7";
-	NSString *accessToken = [defaults objectForKey:kAccessToken];
+
+	NSString *accessToken =[defaults objectForKey:kAccessToken];
     NSLog(@"%@", accessToken);
     NSString *appendToken = [NSString stringWithFormat:@"%@?access_token=%@", [url description], accessToken];
      NSLog(@"%@", appendToken);

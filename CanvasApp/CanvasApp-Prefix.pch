@@ -14,5 +14,5 @@
 #endif
 
 #define kRemindMeNotificationDataKey @"canvasReminder"
-#define canvas_host @"https://learn-wsu.uen.org"
-//#define canvas_host @"https://canvas.instructure.com"
+//#define canvas_host @"https://learn-wsu.uen.org"
+#define canvas_host @"https://canvas.instructure.com"

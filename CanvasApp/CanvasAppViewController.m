@@ -8,6 +8,7 @@
 
 #import "CTLoginViewController.h"
 #import "CanvasAppViewController.h"
+#import "CanvasAppAppDelegate.h"
 #import "CanvasCourseViewController.h"
 #import "CustomCellBackground.h"
 #import "LPViewController.h"
@@ -39,7 +40,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:@"username"] && ![defaults objectForKey:@"password"]) {
+    if (![defaults objectForKey:@"accesstoken"]/*![defaults objectForKey:@"username"]*//* && ![defaults objectForKey:@"password"]*/) {
         CTLoginViewController *login = [[CTLoginViewController alloc] initWithNibName:@"CTLoginViewController" bundle:nil];
         [self presentModalViewController:login animated:YES];
         [login release];
@@ -131,7 +132,9 @@ numberOfRowsInSection:(NSInteger)section {
 -(void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSString *course = [[courses objectAtIndex:[indexPath section]] objectForKey:@"id"];    
+    NSString *course = [[courses objectAtIndex:[indexPath section]] objectForKey:@"id"]; 
+    CanvasAppAppDelegate *delegate = (CanvasAppAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.courseID = course;
     CanvasCourseViewController *cc = [[CanvasCourseViewController alloc] initWithNibName:@"CanvasCourseViewController" bundle:nil];
     MyRequest *request = [[MyRequest alloc] init];
     [request setDelegate:cc];

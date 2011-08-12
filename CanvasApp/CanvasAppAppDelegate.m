@@ -18,10 +18,11 @@
 @synthesize window=_window;
 
 @synthesize navController=_viewController;
-@synthesize calendar, source;
+@synthesize calendar, source, courseID;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    courseID = [[NSString alloc] init];
     // Override point for customization after application launch.
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeSelected:) name:@"KalDataSourceChangedNotification" object:nil];
     
@@ -34,6 +35,7 @@
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
