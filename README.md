@@ -14,6 +14,7 @@ Start Project!
 * Login Screen Created
 * Add HTTP Request Objects
 * Setup Canvas Production Server (switched to quick server, production server is to slow running on 1 computer)
+* Make Less Baller as requested by @taterbase
 
 ## Issues:
 
